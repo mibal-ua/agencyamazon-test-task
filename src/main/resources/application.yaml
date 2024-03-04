@@ -6,3 +6,6 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://9mohapx9:root@cluster0.lclzzko.mongodb.net/test-task
+jwt:
+  issuer: https://amazonagency.com
+  valid-for-days: 30
