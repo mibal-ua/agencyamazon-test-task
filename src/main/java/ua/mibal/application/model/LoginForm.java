@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
  * @link <a href="mailto:9mohapx9@gmail.com">9mohapx9@gmail.com</a>
  */
 public record LoginForm(
-        @NotNull String login,
+        @NotNull String username,
         @NotNull String password
 ) {
 }

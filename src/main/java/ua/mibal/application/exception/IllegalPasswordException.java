@@ -9,9 +9,5 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
  * @link <a href="mailto:9mohapx9@gmail.com">9mohapx9@gmail.com</a>
  */
 @ResponseStatus(BAD_REQUEST)
-public class UsernameAlreadyExistsException extends RuntimeException {
-
-    public UsernameAlreadyExistsException(String username) {
-        super(username);
-    }
+public class IllegalPasswordException extends RuntimeException {
 }

@@ -10,8 +10,7 @@ import ua.mibal.adapter.in.web.model.TokenDto;
 @Component
 public class TokenDtoMapper {
 
-    // TODO
     public TokenDto toDto(String token) {
-        return null;
+        return new TokenDto(token);
     }
 }

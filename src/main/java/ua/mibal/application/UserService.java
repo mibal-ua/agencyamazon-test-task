@@ -3,6 +3,7 @@ package ua.mibal.application;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import ua.mibal.application.exception.NotFoundException;
 import ua.mibal.application.mapper.UserMapper;
 import ua.mibal.application.model.RegistrationForm;
 import ua.mibal.application.port.UserRepository;
@@ -27,5 +28,10 @@ public class UserService {
 
     public boolean isExistsByUsername(String username) {
         return userRepository.existsByUsername(username);
+    }
+
+    public User getOne(String username) {
+        return userRepository.findByUsername(username)
+                .orElseThrow(NotFoundException::new);
     }
 }
