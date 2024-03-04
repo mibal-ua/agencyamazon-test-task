@@ -10,7 +10,7 @@ import java.util.Optional;
  * @author Mykhailo Balakhon
  * @link <a href="mailto:9mohapx9@gmail.com">9mohapx9@gmail.com</a>
  */
-public interface MongoUserRepository extends MongoRepository<User, Long>, UserRepository {
+public interface MongoUserRepository extends MongoRepository<User, String>, UserRepository {
 
     @Override
     Optional<User> findByUsername(String username);

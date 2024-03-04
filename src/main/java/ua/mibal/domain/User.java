@@ -18,7 +18,7 @@ import java.util.List;
 @Document("users")
 public class User implements UserDetails {
 
-    private Long id;
+    private String id;
 
     private String name;
 
