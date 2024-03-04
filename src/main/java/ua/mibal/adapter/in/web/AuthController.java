@@ -1,5 +1,6 @@
 package ua.mibal.adapter.in.web;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,6 +10,7 @@ import ua.mibal.adapter.in.web.mapper.TokenDtoMapper;
 import ua.mibal.adapter.in.web.model.TokenDto;
 import ua.mibal.application.AuthService;
 import ua.mibal.application.model.LoginForm;
+import ua.mibal.application.model.RegistrationForm;
 
 /**
  * @author Mykhailo Balakhon
@@ -22,8 +24,13 @@ public class AuthController {
     private final TokenDtoMapper tokenDtoMapper;
 
     @PostMapping("/login")
-    public TokenDto login(@RequestBody LoginForm loginForm) {
+    public TokenDto login(@Valid @RequestBody LoginForm loginForm) {
         String token = authService.login(loginForm);
         return tokenDtoMapper.toDto(token);
+    }
+
+    @PostMapping("/register")
+    public void register(@Valid @RequestBody RegistrationForm registrationForm) {
+        authService.register(registrationForm);
     }
 }
