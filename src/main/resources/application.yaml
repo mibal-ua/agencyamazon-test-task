@@ -1,3 +1,8 @@
 rsa:
   private-key: classpath:certs/private.pem
   public-key: classpath:certs/public.pem
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://9mohapx9:root@cluster0.lclzzko.mongodb.net/test-task
