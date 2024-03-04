@@ -9,3 +9,6 @@ spring:
 jwt:
   issuer: https://amazonagency.com
   valid-for-days: 30
+mongo:
+  source:
+    path: classpath:report.json
