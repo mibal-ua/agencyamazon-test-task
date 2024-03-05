@@ -7,8 +7,6 @@ import ua.mibal.application.component.MongoReportConverter;
 import ua.mibal.application.port.ReportRepository;
 import ua.mibal.domain.Report;
 
-import java.util.List;
-
 /**
  * @author Mykhailo Balakhon
  * @link <a href="mailto:9mohapx9@gmail.com">9mohapx9@gmail.com</a>
@@ -21,8 +19,8 @@ public class ReportJsonImportService {
     private final FileReader fileReader;
 
     public void importFrom(String path) {
-        List<String> lines = fileReader.readLines(path);
-        Report report = mongoReportConverter.convert(lines);
+        String content = fileReader.read(path);
+        Report report = mongoReportConverter.convert(content);
         reportRepository.setReport(report);
     }
 }
