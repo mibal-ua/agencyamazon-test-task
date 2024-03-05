@@ -13,7 +13,7 @@ import java.util.List;
 public class MongoReportConverter {
 
     // TODO
-    public List<Report> convert(List<String> lines) {
+    public Report convert(List<String> lines) {
         return null;
     }
 }
