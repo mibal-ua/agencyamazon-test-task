@@ -1,7 +1,9 @@
 package ua.mibal.config;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import ua.mibal.config.properties.JwtTokenProps;
 
 /**
@@ -12,5 +14,7 @@ import ua.mibal.config.properties.JwtTokenProps;
 @EnableConfigurationProperties({
         JwtTokenProps.class,
 })
+@EnableScheduling
+@EnableCaching
 public class RootConfig {
 }
