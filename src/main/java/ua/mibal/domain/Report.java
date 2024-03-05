@@ -1,16 +1,16 @@
 package ua.mibal.domain;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * @author Mykhailo Balakhon
- * @link <a href="mailto:9mohapx9@gmail.com">9mohapx9@gmail.com</a>
- */
-@Getter
-@Setter
+import java.util.List;
+
+@Data
 @Document("reports")
 public class Report {
-    // TODO
+    private ObjectId id;
+    private ReportSpecification reportSpecification;
+    private List<SalesAndTrafficByDate> salesAndTrafficByDate;
+    private List<SalesAndTrafficByAsin> salesAndTrafficByAsin;
 }
