@@ -11,4 +11,4 @@ jwt:
   valid-for-days: 30
 mongo:
   source:
-    path: classpath:report.json
+    path: /Users/admin/IdeaProjects/agencyamazon-test-task/src/main/resources/report.json

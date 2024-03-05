@@ -1,6 +1,6 @@
 package ua.mibal.application.component;
 
-import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +25,7 @@ public class FileReader {
     }
 
     private String read0(String path) throws IOException {
-        Resource resource = new ClassPathResource(path);
+        Resource resource = new FileSystemResource(path);
         File file = resource.getFile();
         return Files.lines(file.toPath())
                 .collect(Collectors.joining());
