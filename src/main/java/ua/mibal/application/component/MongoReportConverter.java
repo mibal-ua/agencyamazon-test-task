@@ -1,5 +1,6 @@
 package ua.mibal.application.component;
 
+import com.nimbusds.jose.shaded.gson.Gson;
 import org.springframework.stereotype.Component;
 import ua.mibal.domain.Report;
 
@@ -10,8 +11,7 @@ import ua.mibal.domain.Report;
 @Component
 public class MongoReportConverter {
 
-    // TODO
-    public Report convert(String lines) {
-        return null;
+    public Report convert(String json) {
+        return new Gson().fromJson(json, Report.class);
     }
 }
