@@ -15,9 +15,14 @@ public class Report {
     private List<SalesAndTrafficByDate> salesAndTrafficByDate;
     private List<SalesAndTrafficByAsin> salesAndTrafficByAsin;
 
-    // TODO
     public List<SalesAndTrafficByDate> getSalesAndTrafficByDates(LocalDate start, LocalDate end) {
-        return null;
+        return salesAndTrafficByDate.stream()
+                .filter(
+                        item -> item.getDate().equals(start)
+                                || item.getDate().equals(end)
+                                || (item.getDate().isAfter(start) && item.getDate().isBefore(end))
+                )
+                .toList();
     }
 
     public List<SalesAndTrafficByAsin> getSalesAndTrafficByAsins(List<String> asins) {
