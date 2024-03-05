@@ -4,6 +4,7 @@ import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -13,4 +14,13 @@ public class Report {
     private ReportSpecification reportSpecification;
     private List<SalesAndTrafficByDate> salesAndTrafficByDate;
     private List<SalesAndTrafficByAsin> salesAndTrafficByAsin;
+
+    // TODO
+    public List<SalesAndTrafficByDate> getSalesAndTrafficByDates(LocalDate start, LocalDate end) {
+        return null;
+    }
+
+    public List<SalesAndTrafficByAsin> getSalesAndTrafficByAsins(List<String> asins) {
+        return null;
+    }
 }
