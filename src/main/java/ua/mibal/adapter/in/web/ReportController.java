@@ -18,11 +18,16 @@ import java.util.List;
  */
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/reports/search")
+@RequestMapping("/report")
 public class ReportController {
     private final ReportService reportService;
 
     @GetMapping("/dates")
+    public List<SalesAndTrafficByDate> findAllByDate() {
+        return reportService.findAllByDate();
+    }
+
+    @GetMapping("/dates/search")
     public List<SalesAndTrafficByDate> findByDate(@RequestParam LocalDate start,
                                                   @RequestParam(required = false) LocalDate end) {
         if (end == null) {
@@ -31,7 +36,12 @@ public class ReportController {
         return reportService.findByDate(start, end);
     }
 
-    @GetMapping
+    @GetMapping("/asins")
+    public List<SalesAndTrafficByAsin> findAllByAsins() {
+        return reportService.findAllByAsins();
+    }
+
+    @GetMapping("/asins/search")
     public List<SalesAndTrafficByAsin> findByAsins(@RequestParam("asins") List<String> asins) {
         return reportService.findByAsins(asins);
     }

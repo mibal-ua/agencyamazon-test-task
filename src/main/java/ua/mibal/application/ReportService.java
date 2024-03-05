@@ -20,10 +20,22 @@ import java.util.List;
 public class ReportService {
     private final ReportRepository reportRepository;
 
+    @Cacheable("ReportService.findAllByDate")
+    public List<SalesAndTrafficByDate> findAllByDate() {
+        Report report = reportRepository.getReport();
+        return report.getSalesAndTrafficByDate();
+    }
+
     @Cacheable("ReportService.findByDate")
     public List<SalesAndTrafficByDate> findByDate(LocalDate start, LocalDate end) {
         Report report = reportRepository.getReport();
         return report.getSalesAndTrafficByDates(start, end);
+    }
+
+    @Cacheable("ReportService.findAllByAsins")
+    public List<SalesAndTrafficByAsin> findAllByAsins() {
+        Report report = reportRepository.getReport();
+        return report.getSalesAndTrafficByAsin();
     }
 
     @Cacheable("ReportService.findByAsins")
