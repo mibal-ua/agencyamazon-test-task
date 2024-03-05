@@ -15,6 +15,7 @@ import static java.util.concurrent.TimeUnit.MINUTES;
  */
 @RequiredArgsConstructor
 @Configuration
+@EnableScheduling
 @EnableConfigurationProperties({
         MongoSourceProps.class,
 })
