@@ -21,6 +21,8 @@ public class Report {
     }
 
     public List<SalesAndTrafficByAsin> getSalesAndTrafficByAsins(List<String> asins) {
-        return null;
+        return salesAndTrafficByAsin.stream()
+                .filter(item -> asins.contains(item.getParentAsin()))
+                .toList();
     }
 }
