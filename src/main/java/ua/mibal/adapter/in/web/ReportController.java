@@ -22,7 +22,7 @@ import java.util.List;
 public class ReportController {
     private final ReportService reportService;
 
-    @GetMapping()
+    @GetMapping("/dates")
     public List<SalesAndTrafficByDate> findByDate(@RequestParam LocalDate start,
                                                   @RequestParam(required = false) LocalDate end) {
         if (end == null) {
